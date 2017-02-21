@@ -1,0 +1,24 @@
+<!-- BEGIN HEADER -->
+<div class="page-header">
+    <!-- BEGIN HEADER TOP -->
+    <div class="page-header-top">
+        <div class="container">
+            <!-- BEGIN LOGO -->
+            <div class="page-logo">
+                <a href="{{ env }}">
+                    <img src="{{ asset('logo-gilberto.png') }}" alt="logo" class="logo-default">
+                </a>
+            </div>
+            <!-- END LOGO -->
+            <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+            <a href="javascript:;" class="menu-toggler"></a>
+            <!-- END RESPONSIVE MENU TOGGLER -->
+        </div>
+    </div>
+    <!-- END HEADER TOP -->
+    <!-- BEGIN HEADER MENU -->
+
+    {# Render Header section #}
+    {{ render(controller('GOLMenuBundle:Menu:menu')) }}
+</div>
+<!-- END HEADER -->

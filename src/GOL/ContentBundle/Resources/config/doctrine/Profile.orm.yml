@@ -1,0 +1,48 @@
+GOL\ContentBundle\Entity\Profile:
+    type: entity
+    table: null
+    repositoryClass: GOL\ContentBundle\Repository\ProfileRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        image:
+            type: string
+            length: 255
+            column: image
+        phone:
+            type: string
+            length: 255
+        email:
+            type: string
+            length: 255
+        profile:
+            type: text
+        profession:
+            type: string
+            length: 255
+        hobby1:
+            type: string
+            length: 255
+        hobby2:
+            type: string
+            length: 255
+        hobby3:
+            type: string
+            length: 255
+        percent1:
+            type: string
+            length: 255
+        percent2:
+            type: string
+            length: 255
+        percent3:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

@@ -1,0 +1,23 @@
+gol_api_homepage:
+    path:     /api
+    defaults: { _controller: GOLApiBundle:Api:api }
+    
+gol_api_profiles:
+    path:     /api-profiles
+    defaults: { _controller: GOLApiBundle:Api:apigetallprofiles }
+    
+gol_api_profile:
+    path:     /api-profile/{profileId}
+    defaults: { _controller: GOLApiBundle:Api:apigetprofilebyid }
+    
+gol_api_create_profile:
+    path:     /api-create-profile
+    defaults: { _controller: GOLApiBundle:Api:apicreateprofile }
+    
+gol_api_edit_profile:
+    path:     /api-edit-profile/{profileId}
+    defaults: { _controller: GOLApiBundle:Api:apieditprofile }
+    
+gol_api_delete_profile:
+    path:     /api-delete-profile/{profileId}
+    defaults: { _controller: GOLApiBundle:Api:apideleteprofile }

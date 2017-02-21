@@ -1,0 +1,117 @@
+{% extends "Intraway.html.twig" %}
+
+{% block content %}
+    <div class="page-container">
+        <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper">
+            <!-- BEGIN CONTENT BODY -->
+            <!-- BEGIN PAGE HEAD-->
+            <div class="page-head">
+                <div class="container">
+                    <!-- BEGIN PAGE TITLE -->
+                    <div class="page-title">
+                        <h1>Perfil
+                            <small></small>
+                        </h1>
+                    </div>
+                    <!-- END PAGE TITLE -->
+                </div>
+            </div>
+            <!-- END PAGE HEAD-->
+            <!-- BEGIN PAGE CONTENT BODY -->
+            <div class="page-content">
+                <div class="container">
+                    <!-- BEGIN PAGE BREADCRUMBS -->
+                    <ul class="page-breadcrumb breadcrumb">
+                        <li>
+                            <a href="{{ env }}">Inicio</a>
+                            <i class="fa fa-circle"></i>
+                        </li>
+                        <li>
+                            <span>Perfil</span>
+                        </li>
+                    </ul>
+                    <!-- END PAGE BREADCRUMBS -->
+                    <!-- BEGIN PAGE CONTENT INNER -->
+                    <div class="page-content-inner">
+                        <div class="profile">
+                            <div class="tabbable-line tabbable-full-width">
+                                <ul class="nav nav-tabs">
+                                    <li class="active">
+                                        <a href="#tab_1_1" data-toggle="tab"> Resumen </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="tab_1_1">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <ul class="list-unstyled profile-nav">
+                                                    <li>
+                                                        <img class="thumbnail" style="width: 100%" src="{{ asset('uploads/img/profile/' ~ dataProfile.image ) }}" class="img-responsive pic-bordered" alt="">
+                                                        <a href="{{ env }}editar-perfil/{{ dataProfile.id }}" class="profile-edit"> <i class="fa fa-pencil"></i>Editar </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="row">
+                                                    <div class="col-md-8 profile-info">
+                                                        <h1 class="font-green sbold uppercase">{{ dataProfile.name }}</h1>
+                                                        <p> {{ dataProfile.profession }} </p>
+                                                        <p> <i class="fa fa-envelope"></i> {{ dataProfile.email }} </a></p>
+                                                        <p> <i class="fa fa-phone"></i> {{ dataProfile.phone }} </p>
+                                                    </div>
+
+                                                    <div class="col-md-4">
+                                                        <div class="portlet sale-summary">
+                                                            <div class="portlet-title">
+                                                                <div class="caption font-red sbold"> Hobbies </div>
+                                                            </div>
+                                                            <p>{{ dataProfile.hobby1 | title }}</p>
+                                                            <div class="progress">
+                                                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ dataProfile.percent1 }}%">
+                                                                    <span class="sr-only">{{ dataProfile.percent1 }}% Complete (warning)</span>
+                                                                </div>
+                                                            </div>
+                                                            <p>{{ dataProfile.hobby2 | title }}</p>
+                                                            <div class="progress">
+                                                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: {{ dataProfile.percent2 }}%">
+                                                                    <span class="sr-only">{{ dataProfile.percent2 }}% Complete</span>
+                                                                </div>
+                                                            </div>
+                                                            <p>{{ dataProfile.hobby3 | title }}</p>
+                                                            <div class="progress">
+                                                                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ dataProfile.percent3 }}%">
+                                                                    <span class="sr-only">{{ dataProfile.percent3 }}% Complete (danger)</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row text-center">
+                                                            <a class="btn btn-danger" href='{{ env }}eliminar-perfil/{{ dataProfile.id }}'><i class='fa fa-close'></i> Eliminar</a>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <!--end row-->
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-9">
+                                                <div class="portlet sale-summary">
+                                                    <div class="caption portlet-title font-red sbold"> Perfil </div>
+                                                    <div class="portlet-body">
+                                                        <p> {{ dataProfile.profile }} </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END PAGE CONTENT INNER -->
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

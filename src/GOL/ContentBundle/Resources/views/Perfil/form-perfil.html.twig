@@ -1,0 +1,139 @@
+{% extends "Intraway.html.twig" %}
+
+{% block content %}
+    <div class="page-container">
+        <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper">
+            <!-- BEGIN CONTENT BODY -->
+            <!-- BEGIN PAGE HEAD-->
+            <div class="page-head">
+                <div class="container">
+                    <!-- BEGIN PAGE TITLE -->
+                    <div class="page-title">
+                        <h1>Crear / Editar Perfil
+                            <small></small>
+                        </h1>
+                    </div>
+                    <!-- END PAGE TITLE -->
+                </div>
+            </div>
+            <!-- END PAGE HEAD-->
+            <!-- BEGIN PAGE CONTENT BODY -->
+            <div class="page-content">
+                <div class="container">
+                    <!-- BEGIN PAGE BREADCRUMBS -->
+                    <ul class="page-breadcrumb breadcrumb">
+                        <li>
+                            <a href="{{ env }}">Inicio</a>
+                            <i class="fa fa-circle"></i>
+                        </li>
+                        <li>
+                            <span>Crear / Editar</span>
+                        </li>
+                    </ul>
+                    <!-- END PAGE BREADCRUMBS -->
+                    <!-- BEGIN PAGE CONTENT INNER -->
+                    <div class="page-content-inner">
+                        <div class="row">
+                            <div class="col-md-9 ">
+                                <!-- BEGIN SAMPLE FORM PORTLET-->
+                                <div class="portlet light ">
+                                    <div class="portlet-title">
+                                        <div class="caption font-green">
+                                            <i class="fa fa-table font-blue-madison"></i>
+                                            <span class="caption-subject font-blue-madison bold uppercase"> Formulario de perfil</span>
+                                        </div>
+                                    </div>
+                                    <div class="portlet-body form">
+                                        <form enctype="multipart/form-data" role="form" method="POST">
+                                            <div class="form-body">
+                                                {% if dataProfile.image is defined %}
+                                                    <div class="col-sm-4">
+                                                        <img class="thumbnail" style='width: 100%' src="{{ asset('uploads/img/profile/' ~ dataProfile.image) }}" />
+                                                    </div>
+                                                {% endif %}
+                                                <div class="form-group form-md-line-input form-md-floating-label">
+                                                    <input type="file" class="form-control edited" id="form_control_1" name="image">
+                                                    <span class="help-block">Seleccionar archivo para foto de perfil</span>
+                                                </div>
+                                                <div class="form-group form-md-line-input form-md-floating-label">
+                                                    <input type="text" class="form-control" id="form_control_1" name="name" value="{% if dataProfile.name is defined %}{{ dataProfile.name }}{% endif %}">
+                                                    <label for="form_control_1">Nombre</label>
+                                                </div>
+                                                <div class="form-group form-md-line-input form-md-floating-label">
+                                                    <input type="text" class="form-control" id="form_control_1" name="profession" value="{% if dataProfile.profession is defined %}{{ dataProfile.profession }}{% endif %}">
+                                                    <label for="form_control_1">Profesión o frase</label>
+                                                </div>
+                                                <div class="form-group form-md-line-input form-md-floating-label">
+                                                    <input type="text" class="form-control" id="form_control_1" name="phone" value="{% if dataProfile.phone is defined %}{{ dataProfile.phone }}{% endif %}">
+                                                    <label for="form_control_1">Teléfono</label>
+                                                </div>
+                                                <div class="form-group form-md-line-input form-md-floating-label">
+                                                    <input type="text" class="form-control" id="form_control_1" name="email" value="{% if dataProfile.email is defined %}{{ dataProfile.email }}{% endif %}">
+                                                    <label for="form_control_1">Email</label>
+                                                </div>
+                                                <div class="form-group form-md-line-input form-md-floating-label">
+                                                    <textarea class="form-control" rows="3" name="profile">{% if dataProfile.profile is defined %}{{ dataProfile.profile }}{% endif %}</textarea>
+                                                    <label for="form_control_1">Perfil</label>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group form-md-line-input form-md-floating-label">
+                                                        <input type="text" class="form-control" id="form_control_1" name="hobby1" value="{% if dataProfile.hobby1 is defined %}{{ dataProfile.hobby1 }}{% endif %}">
+                                                        <label for="form_control_1">Hobby 1</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group form-md-line-input form-md-floating-label">
+                                                        <div class='input-group right-addon'>
+                                                            <input type="number" min='0' max='100' step='1' class="form-control" id="form_control_1" name="percent1" value="{% if dataProfile.percent1 is defined %}{{ dataProfile.percent1 }}{% endif %}">
+                                                            <label for="form_control_1">Porcentaje 1</label>
+                                                            <span class="input-group-addon">%</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group form-md-line-input form-md-floating-label">
+                                                        <input type="text" class="form-control" id="form_control_1" name="hobby2" value="{% if dataProfile.hobby2 is defined %}{{ dataProfile.hobby2 }}{% endif %}">
+                                                        <label for="form_control_1">Hobby 2</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group form-md-line-input form-md-floating-label">
+                                                        <div class='input-group right-addon'>
+                                                            <input type="number" min='0' max='100' step='1' class="form-control" id="form_control_1" name="percent2" value="{% if dataProfile.percent2 is defined %}{{ dataProfile.percent2 }}{% endif %}">
+                                                            <label for="form_control_1">Porcentaje 2</label>
+                                                            <span class="input-group-addon">%</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group form-md-line-input form-md-floating-label">
+                                                        <input type="text" class="form-control" id="form_control_1" name="hobby3" value="{% if dataProfile.hobby3 is defined %}{{ dataProfile.hobby3 }}{% endif %}">
+                                                        <label for="form_control_1">Hobby 3</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group form-md-line-input form-md-floating-label">
+                                                        <div class='input-group right-addon'>
+                                                            <input type="number" min='0' max='100' step='1' class="form-control" id="form_control_1" name="percent3" value="{% if dataProfile.percent3 is defined %}{{ dataProfile.percent3 }}{% endif %}">
+                                                            <label for="form_control_1">Porcentaje 3</label>
+                                                            <span class="input-group-addon">%</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-actions noborder">
+                                                <button type="submit" class="btn blue">Enviar</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- END SAMPLE FORM PORTLET-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

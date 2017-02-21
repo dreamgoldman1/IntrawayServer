@@ -1,0 +1,23 @@
+gol_content_homepage:
+    path:     /
+    defaults: { _controller: GOLContentBundle:Perfil:perfiles }
+    
+gol_content_perfiles:
+    path:     /perfiles
+    defaults: { _controller: GOLContentBundle:Perfil:perfiles }
+   
+gol_content_perfil:
+    path:     /perfil/{profileId}
+    defaults: { _controller: GOLContentBundle:Perfil:perfil }
+    
+gol_content_crear_perfil:
+    path:     /crear-perfil
+    defaults: { _controller: GOLContentBundle:Perfil:crearperfil }
+    
+gol_content_editar_perfil:
+    path:     /editar-perfil/{profileId}
+    defaults: { _controller: GOLContentBundle:Perfil:editarperfil }
+    
+gol_content_eliminar_perfil:
+    path:     /eliminar-perfil/{profileId}
+    defaults: { _controller: GOLContentBundle:Perfil:eliminarperfil }
