@@ -28,11 +28,6 @@ class ApiController extends Controller
      * @return Json
      */
     public function apiGetAllProfilesAction() {
-        
-        
-        return new Response('Esta haciendo el llamado del servicio');
-        
-        
         $dataProfile = PerfilController::getAllProfiles();
         return new Response(json_encode($dataProfile));
     }

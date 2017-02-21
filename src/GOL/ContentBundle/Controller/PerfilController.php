@@ -95,6 +95,10 @@ class PerfilController extends Controller {
     public function getAllProfiles() {
         $repository = $this->getDoctrine()->getManager();
         $profilesDB = $repository->getRepository('GOLContentBundle:Profile')->findAll();
+        
+        echo "<pre>";
+        var_dump($profilesDB);
+        die;
 
         foreach ($profilesDB as $profileDB) {
             $dataProfile[] = array(
