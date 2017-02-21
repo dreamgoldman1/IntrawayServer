@@ -20,7 +20,7 @@ class ApiController extends Controller
      */
     public function apiAction()
     {
-        return new Response($this->apiGetProfileById(1));
+        return new Response($this->apiGetAllProfilesAction());
     }
     
     /**
@@ -28,6 +28,11 @@ class ApiController extends Controller
      * @return Json
      */
     public function apiGetAllProfilesAction() {
+        
+        
+        return new Response('Esta haciendo el llamado del servicio');
+        
+        
         $dataProfile = PerfilController::getAllProfiles();
         return new Response(json_encode($dataProfile));
     }

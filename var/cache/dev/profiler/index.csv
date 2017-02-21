@@ -2136,3 +2136,5 @@ a6e783,127.0.0.1,POST,http://intrawayserver.dev/app_dev.php/api-profile/14,14876
 7cf551,127.0.0.1,POST,http://intrawayserver.dev/app_dev.php/api-profiles,1487697970,,200
 81950d,127.0.0.1,POST,http://intrawayserver.dev/app_dev.php/api-profiles,1487697997,,200
 2e36db,127.0.0.1,POST,http://intrawayserver.dev/app_dev.php/api-profiles,1487697999,,200
+6b8f94,127.0.0.1,GET,http://intrawayserver.dev/app_dev.php/api-profiles,1487707045,,200
+e3e6a7,127.0.0.1,GET,http://intrawayserver.dev/app_dev.php/api,1487707054,,200
