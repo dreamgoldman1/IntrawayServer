@@ -92,8 +92,8 @@ class PerfilController extends Controller {
      * Get all data profile from DB
      * @return array
      */
-    public function getAllProfiles() {
-        $repository = $this->getDoctrine()->getManager();
+    public function getAllProfiles($repository) {
+        //$repository = $this->getDoctrine()->getManager();
         $profilesDB = $repository->getRepository('GOLContentBundle:Profile')->findAll();
 
         foreach ($profilesDB as $profileDB) {
@@ -122,9 +122,9 @@ class PerfilController extends Controller {
      * @param integer $profileId
      * @return array
      */
-    public function getProfileById($profileId) {
+    public function getProfileById($profileId,$repository) {
         $filtros = array('id' => $profileId);
-        $repository = $this->getDoctrine()->getManager();
+        //$repository = $this->getDoctrine()->getManager();
         $profileDB = $repository->getRepository('GOLContentBundle:Profile')->findOneBy($filtros);
 
         $dataProfile = array(
@@ -196,9 +196,9 @@ class PerfilController extends Controller {
      * @param Request $request
      * @return array
      */
-    public function editProfile($profileId, $request) {
+    public function editProfile($profileId, $request,$repository) {
         $filtros = array('id' => $profileId);
-        $repository = $this->getDoctrine()->getManager();
+        //$repository = $this->getDoctrine()->getManager();
         $profileDB = $repository->getRepository('GOLContentBundle:Profile')->findOneBy($filtros);
         
         if ($request->getMethod() == 'POST') {
@@ -242,9 +242,9 @@ class PerfilController extends Controller {
      * @param integer $profileId
      * @return array
      */
-    public function deleteProfile($profileId) {
+    public function deleteProfile($profileId, $repository) {
         $filtros = array('id' => $profileId);
-        $repository = $this->getDoctrine()->getManager();
+        //$repository = $this->getDoctrine()->getManager();
         $profileDB = $repository->getRepository('GOLContentBundle:Profile')->findOneBy($filtros);
         $repository->remove($profileDB);
         $repository->flush();

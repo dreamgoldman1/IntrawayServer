@@ -2138,3 +2138,8 @@ a6e783,127.0.0.1,POST,http://intrawayserver.dev/app_dev.php/api-profile/14,14876
 2e36db,127.0.0.1,POST,http://intrawayserver.dev/app_dev.php/api-profiles,1487697999,,200
 6b8f94,127.0.0.1,GET,http://intrawayserver.dev/app_dev.php/api-profiles,1487707045,,200
 e3e6a7,127.0.0.1,GET,http://intrawayserver.dev/app_dev.php/api,1487707054,,200
+aebbb9,127.0.0.1,GET,http://intrawayserver.dev/app_dev.php/api,1487708037,,200
+a0944e,127.0.0.1,GET,http://intrawayserver.dev/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DGOLMenuBundle%253AMenu%253Amenu,1487708053,bad5f4,200
+bad5f4,127.0.0.1,GET,http://intrawayserver.dev/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DGOLHeaderBundle%253AHeader%253Aheader,1487708053,ef2878,200
+89c2ff,127.0.0.1,GET,http://intrawayserver.dev/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DGOLFooterBundle%253AFooter%253Afooter,1487708053,ef2878,200
+ef2878,127.0.0.1,GET,http://intrawayserver.dev/app_dev.php/,1487708054,,200

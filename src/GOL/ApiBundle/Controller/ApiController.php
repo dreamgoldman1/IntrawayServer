@@ -28,7 +28,8 @@ class ApiController extends Controller
      * @return Json
      */
     public function apiGetAllProfilesAction() {
-        $dataProfile = PerfilController::getAllProfiles();
+        $repository = $this->getDoctrine()->getManager();
+        $dataProfile = PerfilController::getAllProfiles($repository);
         return new Response(json_encode($dataProfile));
     }
     
@@ -38,7 +39,8 @@ class ApiController extends Controller
      * @return Json
      */
     public function apiGetProfileByIdAction($profileId) {
-        $dataProfile = PerfilController::getProfileById($profileId);
+        $repository = $this->getDoctrine()->getManager();
+        $dataProfile = PerfilController::getProfileById($profileId,$repository);
         return new Response(json_encode($dataProfile));
     }
     
@@ -59,7 +61,8 @@ class ApiController extends Controller
      * @return Json
      */
     public function apiEditProfileAction($profileId, Request $request) {
-        $dataProfile = PerfilController::editProfile($profileId, $request);
+        $repository = $this->getDoctrine()->getManager();
+        $dataProfile = PerfilController::editProfile($profileId, $request,$repository);
         return new Response(json_encode($dataProfile));
     }
     
@@ -69,7 +72,8 @@ class ApiController extends Controller
      * @return Json
      */
     public function apiDeleteProfileAction($profileId) {
-        $dataProfile = PerfilController::deleteProfile($profileId);
+        $repository = $this->getDoctrine()->getManager();
+        $dataProfile = PerfilController::deleteProfile($profileId,$repository);
         return new Response(json_encode($dataProfile));
     }
 }
