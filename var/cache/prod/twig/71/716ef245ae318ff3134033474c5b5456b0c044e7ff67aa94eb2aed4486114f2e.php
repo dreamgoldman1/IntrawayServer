@@ -1,6 +1,6 @@
 <?php
 
-/* default/index.html.twig */
+/* :default:index.html.twig */
 class __TwigTemplate_d25adf2c86a3e60592e0f12f62fbe7242452519138d99965ac8752e660af22f0 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -8,7 +8,7 @@ class __TwigTemplate_d25adf2c86a3e60592e0f12f62fbe7242452519138d99965ac8752e660a
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", "default/index.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", ":default:index.html.twig", 1);
         $this->blocks = array(
             'body' => array($this, 'block_body'),
             'stylesheets' => array($this, 'block_stylesheets'),
@@ -119,7 +119,7 @@ class __TwigTemplate_d25adf2c86a3e60592e0f12f62fbe7242452519138d99965ac8752e660a
 
     public function getTemplateName()
     {
-        return "default/index.html.twig";
+        return ":default:index.html.twig";
     }
 
     public function isTraitable()
@@ -142,6 +142,6 @@ class __TwigTemplate_d25adf2c86a3e60592e0f12f62fbe7242452519138d99965ac8752e660a
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "default/index.html.twig", "/var/www/IntrawayServer/app/Resources/views/default/index.html.twig");
+        return new Twig_Source("", ":default:index.html.twig", "/var/www/IntrawayServer/app/Resources/views/default/index.html.twig");
     }
 }

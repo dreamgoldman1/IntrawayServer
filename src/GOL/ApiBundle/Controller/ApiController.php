@@ -62,7 +62,7 @@ class ApiController extends Controller
      */
     public function apiEditProfileAction($profileId, Request $request) {
         $repository = $this->getDoctrine()->getManager();
-        $dataProfile = PerfilController::editProfile($profileId, $request,$repository);
+        $dataProfile = PerfilController::editProfile($profileId, $request, $repository);
         return new Response(json_encode($dataProfile));
     }
     

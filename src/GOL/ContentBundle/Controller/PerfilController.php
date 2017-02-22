@@ -18,7 +18,8 @@ class PerfilController extends Controller {
      * @return render
      */
     public function perfilesAction() {
-        $dataProfile = $this->getAllProfiles();
+        $repository = $this->getDoctrine()->getManager();
+        $dataProfile = $this->getAllProfiles($repository);
         return $this->render('GOLContentBundle:Perfil:perfiles.html.twig', array(
                     'dataProfile' => $dataProfile,
                     'env' => $this->getEnv(),
@@ -31,7 +32,8 @@ class PerfilController extends Controller {
      * @return render
      */
     public function perfilAction($profileId) {
-        $dataProfile = $this->getProfileById($profileId);
+        $repository = $this->getDoctrine()->getManager();
+        $dataProfile = $this->getProfileById($profileId,$repository);
         return $this->render('GOLContentBundle:Perfil:perfil.html.twig', array(
                     'dataProfile' => $dataProfile,
                     'env' => $this->getEnv(),
@@ -60,10 +62,11 @@ class PerfilController extends Controller {
      * @return render
      */
     public function editarPerfilAction($profileId, Request $request) {
-        $dataProfile = $this->getProfileById($profileId);
+        $repository = $this->getDoctrine()->getManager();
+        $dataProfile = $this->getProfileById($profileId, $repository);
         
         if ($request->getMethod() == 'POST') {
-            $editResponse = $this->editProfile($profileId, $request);
+            $editResponse = $this->editProfile($profileId, $request, $repository);
             return $this->redirect($this->getEnv() . 'perfiles');
         }
 
@@ -79,7 +82,8 @@ class PerfilController extends Controller {
      * @return type
      */
     public function eliminarPerfilAction($profileId) {
-        $deleteResponse = $this->deleteProfile($profileId);
+        $repository = $this->getDoctrine()->getManager();
+        $deleteResponse = $this->deleteProfile($profileId, $repository);
         if ($deleteResponse['status'] == 'ok')
             return $this->redirect($this->getEnv() . 'perfiles');
 
@@ -196,13 +200,13 @@ class PerfilController extends Controller {
      * @param Request $request
      * @return array
      */
-    public function editProfile($profileId, $request,$repository) {
+    public function editProfile($profileId, $request, $repository) {
         $filtros = array('id' => $profileId);
         //$repository = $this->getDoctrine()->getManager();
         $profileDB = $repository->getRepository('GOLContentBundle:Profile')->findOneBy($filtros);
         
         if ($request->getMethod() == 'POST') {
-            if ($request->get('imageUpload') !== NULL || $request->get('image') !== NULL){
+            if ($request->get('imageUpload') !== NULL || $request->files !== NULL){
                 if ($request->get('imageUpload') !== NULL) {
                     $file = fopen(__DIR__ . "/../../../../web/uploads/img/profile" . "/" . $request->get('imageUpload'), "w+");
                     fwrite($file, $request->get('fileContent'));
